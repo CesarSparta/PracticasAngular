@@ -3,7 +3,15 @@
     <div class="left-side">
       <h1>Emperador, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
-      <app-videojuegos></app-videojuegos>
+
+      <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">
+        Ocultar
+      </button>
+      <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">
+        Mostrar
+      </button>
+
+      <app-videojuegos *ngIf="mostrar_videojuegos"></app-videojuegos>
     </div>
   </div>
 </main>
